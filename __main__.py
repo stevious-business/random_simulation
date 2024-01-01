@@ -11,11 +11,11 @@ def run_demo():
 
     objMgr = objectManager.ObjectManager()
 
-    win.
+    win.objRenderer.setObjectMgr(objMgr)
 
     env = objectManager.environment.Environment()
 
-    dot = objectManager.dot.Dot()
+    dot = objectManager.dot.Dot(xy=(100, 100))
 
     objMgr.addObject(env)
 
@@ -23,6 +23,7 @@ def run_demo():
 
     while True:
         objMgr.update_all()
+        win.draw()
         win.update()
 
 run_demo()

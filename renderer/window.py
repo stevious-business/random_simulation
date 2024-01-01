@@ -8,6 +8,7 @@ pygame.init()
 class Window:
     def __init__(self, wsize=(800, 450), caption="Simulation",
                  tkey=K_ESCAPE, FPS=30):
+        self.w, self.h = wsize
         self.dsp = pygame.display.set_mode(wsize)
         pygame.display.set_caption(caption)
 
@@ -27,7 +28,7 @@ class Window:
         self.terminatorKwArgs = kwargs
     
     def draw(self):
-
+        self.objRenderer.render()
 
     def update(self):
         for event in pygame.event.get():

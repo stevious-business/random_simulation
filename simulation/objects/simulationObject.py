@@ -8,7 +8,7 @@ class SimulationObject:
         self.children = []
     
     def update(self):
-        self.position = np.add(self.position, self.velocity)
+        self.position = np.add(self.xy, self.velocity)
         for child in self.children:
             child.update()
     
